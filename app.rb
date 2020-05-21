@@ -32,7 +32,7 @@ end
 
 get '/' do
 	# выбираем список post из базы данных
-	@results = @db.execute 'select * from Posts order by id desck'
+	@results = @db.execute 'select * from Posts order by id desc'
 	erb :index
 
 end
