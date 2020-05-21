@@ -45,5 +45,9 @@ get '/new' do
   post '/new' do
 	# получаем переменную из post- запроса
 	content = params[:content]
-	erb "You typed #{content}"
+		if content.size <= 0
+			@error = 'Type post text'
+			return erb :new
+		end
+	erb "You typed: #{content}"
   end  
